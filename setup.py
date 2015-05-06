@@ -83,7 +83,6 @@ else:
     extra_compile_args.extend([
         '-std=c++0x',
         '-Wall',
-        '-Werror',
         '-Wno-error=cpp',  # avoid #warning "Using deprecated NumPy API,..."
         '-Wno-sign-compare',
         '-Wno-strict-aliasing',
