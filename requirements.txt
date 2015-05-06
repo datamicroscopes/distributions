@@ -4,6 +4,7 @@ scipy>=0.9.0
 cython>=0.20.1
 scikit-learn
 goftests
+scandir
 simplejson
 protobuf
 parsable

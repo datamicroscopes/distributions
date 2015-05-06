@@ -27,6 +27,7 @@
 
 import os
 import re
+import scandir
 import sys
 import numpy
 
@@ -59,7 +60,23 @@ if os.environ.get('CXX', '').startswith('g++'):
     clang = False
 
 
-include_dirs = ['include', 'distributions']
+# Emulate `find_package(Eigen3 REQUIRED)` in cmake
+
+class Eigen3PathException(Exception):
+    pass
+def get_eigen_include_path():
+    signature_file = 'signature_of_eigen3_matrix_library'
+    root_search_path = os.environ.get('CMAKE_INSTALL_PREFIX', '')
+    if root_search_path != '':
+        for root, dirs, files in scandir.walk(root_search_path):
+            if signature_file in files:
+                    return os.path.dirname(root) # Get parent directory
+    raise Eigen3PathException('Cannot find include path for Eigen 3. Try setting CMAKE_INSTALL_PREFIX.')
+
+eigen_include_path = get_eigen_include_path()
+
+
+include_dirs = ['include', 'distributions', eigen_include_path]
 include_dirs.append(numpy.get_include())
 
 if 'EXTRA_INCLUDE_PATH' in os.environ:
