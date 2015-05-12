@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/posterior/distributions.svg?branch=master)](https://travis-ci.org/posterior/distributions)
-[![Code Quality](http://img.shields.io/scrutinizer/g/posterior/distributions.svg)](https://scrutinizer-ci.com/g/posterior/distributions/code-structure/master/hot-spots)
+[![Build Status](https://travis-ci.org/datamicroscopes/distributions.svg?branch=master)](https://travis-ci.org/datamicroscopes/distributions)
+[![Code Quality](http://img.shields.io/scrutinizer/g/datamicroscopes/distributions.svg)](https://scrutinizer-ci.com/g/datamicroscopes/distributions/code-structure/master/hot-spots)
 [![Latest Version](https://badge.fury.io/py/distributions.svg)](https://pypi.python.org/pypi/distributions)
 
 # Distributions
